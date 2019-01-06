@@ -6,34 +6,16 @@
 </head>
 <body>
 
-<header>
-    <h1>{{ config('app.name') }}</h1>
-
-    <nav>
-        @foreach($nav['header-menu']['items'] as $item )
-            <a href="/{{ $item['object_slug'] }}.html" data-id="{{ $item['object_slug'] }}">{{ $item['title'] }}</a>
-        @endforeach
-    </nav>
-
-</header>
+@component('partials.header', ['title' => config('app.name'), 'nav' =>  $nav['header-menu']['items'] ])
+@endcomponent
 
 
 <article>
     @yield('article')
 </article>
 
-<footer>
-
-    <h1>{{ config('app.name') }}</h1>
-
-    <nav>
-        @foreach($nav['footer-menu']['items'] as $item )
-            <a href="/{{ $item['object_slug'] }}.html" data-id="{{ $item['object_slug'] }}">{{ $item['title'] }}</a>
-        @endforeach
-    </nav>
-
-
-</footer>
+@component('partials.footer', ['title' => config('app.name'), 'nav' =>  $nav['footer-menu']['items'] ])
+@endcomponent
 
 
 </body>
