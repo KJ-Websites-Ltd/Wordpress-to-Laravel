@@ -55,6 +55,8 @@ class Base
         $response = $this->client->request('GET', $query);
         $response = $this->cleanSingle($response->getBody());
         
+        
+        
         $this->setResult($response);
         
         

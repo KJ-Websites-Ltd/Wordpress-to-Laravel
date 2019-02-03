@@ -19,6 +19,7 @@ class Post extends Base
             'link',
             'excerpt',
             '_embedded',
+            'wp_headless_gutenberg_data'
         ];
     const SINGLE_COLUMNS = ['content', 'links', 'acf'];
     

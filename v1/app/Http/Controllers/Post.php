@@ -52,8 +52,11 @@ class Post extends Base
             //array to store
             $rtn = ['data' => $data, 'nav' => $nav];
             
+            echo '<pre>';
+            print_r($data);
+            
             //store $rtn in cache
-            //Cache::put($cacheKeyName, $rtn, config('app.cache_expire'));
+            Cache::put($cacheKeyName, $rtn, config('app.cache_expire'));
             
             return $rtn;
             
