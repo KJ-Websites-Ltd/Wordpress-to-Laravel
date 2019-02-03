@@ -3,7 +3,7 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="83fee197-94ac-4ab6-8224-bee1d4c71feb" name="dev" url="http://wp-laravel.loc/">
-        <fileTransfer port="0" mountedRoot="$PROJECT_DIR$/../devilbox/data/www/wp-laravel" accessType="MOUNT" />
+        <fileTransfer port="0" mountedRoot="$PROJECT_DIR$/../devilbox-obs/data/www/wp-laravel" accessType="MOUNT" />
       </webServer>
     </option>
   </component>
