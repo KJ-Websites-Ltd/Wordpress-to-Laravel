@@ -41,15 +41,20 @@ class Menu extends Base
      */
     public function multiple(array $idArray = []): void
     {
+     
         if (empty($idArray)) {
             parent::multiple($idArray);
         } else {
             
             $res = [];
             foreach ($idArray as $id) {
+                
                 $this->single($id);
                 $menu               = $this->getResult();
-                $res[$menu['slug']] = $menu;
+                if (isset($menu['slug'])) {
+                    $res[$menu['slug']] = $menu;
+                }
+                
             }
             
             $this->setResult($res);

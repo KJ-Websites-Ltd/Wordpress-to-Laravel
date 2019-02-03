@@ -53,7 +53,7 @@ class Post extends Base
             $rtn = ['data' => $data, 'nav' => $nav];
             
             //store $rtn in cache
-            Cache::put($cacheKeyName, $rtn, config('app.cache_expire'));
+            //Cache::put($cacheKeyName, $rtn, config('app.cache_expire'));
             
             return $rtn;
             
