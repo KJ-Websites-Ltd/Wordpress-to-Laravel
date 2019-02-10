@@ -6,7 +6,7 @@ use App\Repositories\Menu as menuRepository;
 use App\Repositories\Page as pageRepository;
 use Illuminate\Http\Request;
 
-class Page extends Post
+class Page extends Posts
 {
     
     

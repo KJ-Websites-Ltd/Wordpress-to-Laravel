@@ -20,6 +20,11 @@ Route::get('/', function () {
  */
 Route::get('/{slug}.html', 'Page@single');
 
+/**
+ * Each post
+ */
+Route::get('/post/{slug}.html', 'Posts@single');
+
 
 
 

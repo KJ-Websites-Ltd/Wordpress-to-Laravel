@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Repositories\Menu as menuRepository;
-use App\Repositories\Post as postRepository;
+use App\Repositories\Posts as postRepository;
 use App\Services\Util;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 
-class Post extends Base
+class Posts extends Base
 {
     public $request;
     public $objRepository;
@@ -23,7 +23,7 @@ class Post extends Base
     
     
     /**
-     * Return a wp page via slug
+     * Return a wp post via slug
      *
      * @param string $slug
      *
@@ -37,7 +37,7 @@ class Post extends Base
         $view         = Util::checkTemplate($slug, $className);
         
         //check the cache to return the post layout array, if not exists then recreate
-        $rtn = Cache::get($cacheKeyName, function () use ($slug, $cacheKeyName) {
+       $rtn = Cache::get($cacheKeyName, function () use ($slug, $cacheKeyName) {
             
             //get the object single array
             $this->objRepository->single($slug);
@@ -52,15 +52,13 @@ class Post extends Base
             //array to store
             $rtn = ['data' => $data, 'nav' => $nav];
             
-            echo '<pre>';
-            print_r($data);
-            
             //store $rtn in cache
-            Cache::put($cacheKeyName, $rtn, config('app.cache_expire'));
+            //Cache::put($cacheKeyName, $rtn, config('app.cache_expire'));
             
             return $rtn;
             
         });
+       
         
         
         return view($view, [

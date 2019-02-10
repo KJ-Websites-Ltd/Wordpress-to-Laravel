@@ -3,10 +3,10 @@
 namespace App\Repositories;
 
 
-class Post extends Base
+class Posts extends Base
 {
     
-    const TYPE = 'post';
+    const TYPE = 'posts';
     const MULTIPLE_COLUMNS
         = [
             'id',
@@ -37,7 +37,7 @@ class Post extends Base
     
     
     /**
-     * Post specific clean data
+     * Posts specific clean data
      *
      * @param $data
      * @param $columns

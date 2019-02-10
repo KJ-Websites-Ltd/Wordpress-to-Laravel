@@ -3,7 +3,7 @@
 namespace App\Repositories;
 
 
-class Page extends Post
+class Page extends Posts
 {
     
     const TYPE = 'pages';
